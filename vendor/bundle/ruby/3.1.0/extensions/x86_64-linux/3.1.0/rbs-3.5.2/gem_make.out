@@ -1,0 +1,27 @@
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/rbs-3.5.2/ext/rbs_extension
+/home/masonroberts/.rbenv/versions/3.1.4/bin/ruby extconf.rb
+checking for whether -std=gnu99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/rbs-3.5.2/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240813-422999-g1c4g3 sitelibdir\=./.gem.20240813-422999-g1c4g3 clean
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/rbs-3.5.2/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240813-422999-g1c4g3 sitelibdir\=./.gem.20240813-422999-g1c4g3
+compiling constants.c
+compiling lexer.c
+compiling lexstate.c
+compiling location.c
+compiling main.c
+compiling parser.c
+compiling parserstate.c
+compiling ruby_objs.c
+compiling unescape.c
+linking shared-object rbs_extension.so
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/rbs-3.5.2/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240813-422999-g1c4g3 sitelibdir\=./.gem.20240813-422999-g1c4g3 install
+/usr/bin/install -c -m 0755 rbs_extension.so ./.gem.20240813-422999-g1c4g3
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/rbs-3.5.2/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240813-422999-g1c4g3 sitelibdir\=./.gem.20240813-422999-g1c4g3 clean

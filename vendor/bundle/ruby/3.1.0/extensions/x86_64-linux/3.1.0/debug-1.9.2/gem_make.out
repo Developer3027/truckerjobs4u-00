@@ -1,0 +1,19 @@
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/debug-1.9.2/ext/debug
+/home/masonroberts/.rbenv/versions/3.1.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-e5wxai sitelibdir\=./.gem.20240813-420816-e5wxai clean
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-e5wxai sitelibdir\=./.gem.20240813-420816-e5wxai
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-e5wxai sitelibdir\=./.gem.20240813-420816-e5wxai install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20240813-420816-e5wxai/debug
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-e5wxai sitelibdir\=./.gem.20240813-420816-e5wxai clean

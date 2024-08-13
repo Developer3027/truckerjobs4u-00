@@ -1,0 +1,18 @@
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.1/ext/stringio
+/home/masonroberts/.rbenv/versions/3.1.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-u4drej sitelibdir\=./.gem.20240813-420816-u4drej clean
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-u4drej sitelibdir\=./.gem.20240813-420816-u4drej
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-u4drej sitelibdir\=./.gem.20240813-420816-u4drej install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20240813-420816-u4drej
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-u4drej sitelibdir\=./.gem.20240813-420816-u4drej clean

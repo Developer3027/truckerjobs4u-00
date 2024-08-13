@@ -1,0 +1,20 @@
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+/home/masonroberts/.rbenv/versions/3.1.4/bin/ruby extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+checking for rb_reg_onig_match() in ruby.h... no
+creating Makefile
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-bhvbtd sitelibdir\=./.gem.20240813-420816-bhvbtd clean
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-bhvbtd sitelibdir\=./.gem.20240813-420816-bhvbtd
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-bhvbtd sitelibdir\=./.gem.20240813-420816-bhvbtd install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20240813-420816-bhvbtd
+
+current directory: /home/masonroberts/projects/truckerjobs4u/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240813-420816-bhvbtd sitelibdir\=./.gem.20240813-420816-bhvbtd clean

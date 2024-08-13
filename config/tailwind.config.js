@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        anton: ['Anton', ...defaultTheme.fontFamily.sans],
         bak: ['Bakbak One', ...defaultTheme.fontFamily.sans],
       },
     },

@@ -36,18 +36,20 @@
             <button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>
           </div>
         </div>
-        <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read our Privacy Policy</a>.</div>
+        <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read our Privacy Policy</a>.</div>
       </form>
     </div>
   </div>
 </section>
 <!--about --->
-<section class="w-full bg-white dark:bg-black ">
+<section class="w-full bg-white dark:bg-black">
   <div class="flex flex-col justify-center items-center py-8 px-4 w-full">
     <div class="lg:w-5/6 text-center">
-      <h2 class="font-bak text-yellow-500 text-3xl my-6">
-        About TruckerJobs4u.com
-      </h2>
+      <div class="flex justify-center text-2xl sm:text-3xl my-6 text-gray-500 dark:text-gray-400">
+        <span class="font-sans">About &nbsp;</span>
+        <span class="saira-stencil-one-regular">TRUCKER</span>
+        <span class="text-yellow-400 saira-stencil-one-regular">JOBS4U.com</span>
+      </div>
       <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
         Founded in 2024 by a group of experienced recruiting specialists, TruckerJobs4u.com emerged from a collective vision to revolutionize the truck driver recruitment industry. Our founders, having spent years navigating the complexities of driver placement, recognized a glaring need for a more personalized and honest approach to career planning for truck drivers.
       </p>
@@ -189,7 +191,8 @@
                 <%= f.text_field :location, id: "location", placeholder: "Chicago, IL", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
                 <!--<input type="text" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Chicago, IL" autocomplete="off" required />-->
               </div>
-              <%= f.submit "Register", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+              <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 newsletter-form-footer dark:text-gray-300">We care about the protection of your data. <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read our Privacy Policy</a>.</div>
+              <%= f.submit "Register", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer" %>
               <!--<button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>-->
               <!--</form>-->
             <% end %>

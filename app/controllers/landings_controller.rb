@@ -25,7 +25,7 @@ class LandingsController < ApplicationController
 
     respond_to do |format|
       if @landing.save
-        format.html { redirect_to landing_url(@landing), notice: "Landing was successfully created." }
+        format.html { redirect_to root_path, notice: "Thank you! We will be in touch." }
         format.json { render :show, status: :created, location: @landing }
       else
         format.html { render :new, status: :unprocessable_entity }

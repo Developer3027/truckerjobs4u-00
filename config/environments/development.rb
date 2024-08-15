@@ -63,7 +63,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # Include font assets in development
-  config.assets.paths << Rails.root.join("app", "assets", "fonts")
+  # config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

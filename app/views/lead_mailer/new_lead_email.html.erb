@@ -1,0 +1,12 @@
+<main>
+  <h1>Lead Generated</h1>
+  <h3>A Trucker is in need of your assistance</h3>
+  <p><%= @landing.first_name %> wishes to be contacted. Here is the information they provided.</p>
+  <ul>
+    <li>Name: <%= @landing.first_name %> <%= @landing.last_name %></li>
+    <li>Email: <%= @landing.email %></li>
+    <li>Phone: <%= @landing.phone %></li>
+    <li>Location: <%= @landing.location %></li>
+  </ul>
+  <p><em>They are waiting on your call.</em></p>
+</main>

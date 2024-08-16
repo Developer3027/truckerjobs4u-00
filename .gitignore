@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore bundle in vendor folder
-/bundle/vendor/*
+/vendor/bundle/*
 
 # Ignore all environment files (except templates).
 /.env*

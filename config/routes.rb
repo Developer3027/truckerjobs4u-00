@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :newsletter_emails
   resources :landings
   devise_for :users
 

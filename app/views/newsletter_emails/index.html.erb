@@ -1,0 +1,21 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% content_for :title, "Newsletter emails" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Newsletter emails</h1>
+    <%= link_to "New newsletter email", new_newsletter_email_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="newsletter_emails" class="min-w-full">
+    <% @newsletter_emails.each do |newsletter_email| %>
+      <%= render newsletter_email %>
+      <p>
+        <%= link_to "Show this newsletter email", newsletter_email, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      </p>
+    <% end %>
+  </div>
+</div>

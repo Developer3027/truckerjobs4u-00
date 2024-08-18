@@ -33,7 +33,7 @@ class LandingsController < ApplicationController
 
           # Send an email to the admin
           LeadMailer.new_lead_email(@landing).deliver_now
-          format.html { redirect_to root_path, notice: "Thank you! We will be in touch." }
+          format.html { redirect_to root_path, notice: "Thank you! We will be in touch soon!" }
           format.json { render :show, status: :created, location: @landing }
         else
           format.html { render :new, status: :unprocessable_entity }

@@ -23,13 +23,18 @@ class NewsletterEmailsController < ApplicationController
   def create
     @newsletter_email = NewsletterEmail.new(newsletter_email_params)
 
-    respond_to do |format|
-      if @newsletter_email.save
-        format.html { redirect_to newsletter_email_url(@newsletter_email), notice: "Newsletter email was successfully created." }
-        format.json { render :show, status: :created, location: @newsletter_email }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @newsletter_email.errors, status: :unprocessable_entity }
+    if newsletter_email_params[:pp_check] == "0" || newsletter_email_params[:pp_check] == false
+      @error_message = "Please check the privacy policy"
+      render :new, locals: { error_message: @error_message }
+    else
+      respond_to do |format|
+        if @newsletter_email.save
+          format.html { redirect_to root_path, notice: "Thank you for signing up!" }
+          format.json { render :show, status: :created, location: @newsletter_email }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @newsletter_email.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

@@ -23,19 +23,22 @@ class LandingsController < ApplicationController
   def create
     @landing = Landing.new(landing_params)
 
-    respond_to do |format|
-      if @landing.save
-        # Create a new user using the email field from the landing form
-        User.create(email: params[:landing][:email], password: params[:landing][:last_name])
-        # puts "Password: #{params[:landing][:last_name]}, Email: #{params[:landing][:email]}"
+    if landing_params[:pp_check] == "0" || landing_params[:pp_check] == false
+      render :new
+    else
+      respond_to do |format|
+        if @landing.save
+          # Create a new user using the email field from the landing form
+          User.create(email: params[:landing][:email], password: params[:landing][:last_name])
 
-        # Send an email to the admin
-        LeadMailer.new_lead_email(@landing).deliver_now
-        format.html { redirect_to root_path, notice: "Thank you! We will be in touch." }
-        format.json { render :show, status: :created, location: @landing }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @landing.errors, status: :unprocessable_entity }
+          # Send an email to the admin
+          LeadMailer.new_lead_email(@landing).deliver_now
+          format.html { redirect_to root_path, notice: "Thank you! We will be in touch soon!" }
+          format.json { render :show, status: :created, location: @landing }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @landing.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -71,6 +74,6 @@ class LandingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def landing_params
-      params.require(:landing).permit(:first_name, :last_name, :email, :phone, :location, :content)
+      params.require(:landing).permit(:first_name, :last_name, :email, :phone, :location, :content, :pp_check)
     end
 end

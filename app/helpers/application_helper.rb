@@ -2,20 +2,20 @@ module ApplicationHelper
   # Returns the symbol `:landing`, which represents the name of the resource being used in the application.
   #
   # @return [Symbol] `:landing`
-  def resource_name
-    :landing
+  def resource_name(resource = :landing)
+    resource
   end
 
   # Returns the class of the resource being used in the application.
   #
   # @return [Class] The class of the resource.
-  def resource_class
-      Landing
+  def resource_class(resource = :landing)
+    resource.to_s.classify.constantize
   end
 
   # Returns the current resource object, initializing it as a new Landing instance if it doesn't exist.
-  def resource
-    @resource ||= Landing.new
+  def resource(resource)
+    @resource ||= resource_class.new
   end
 
   # Returns the Devise mapping for the landing resource.

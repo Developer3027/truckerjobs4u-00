@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "privacy" => "privacy_policy#index"
+  resources :newsletter_emails
   resources :landings
   devise_for :users
 

@@ -17,6 +17,7 @@ class LandingsController < ApplicationController
 
   # GET /landings/1/edit
   def edit
+    @landing = Landing.find(params[:id])
   end
 
   # POST /landings or /landings.json
@@ -47,7 +48,7 @@ class LandingsController < ApplicationController
   def update
     respond_to do |format|
       if @landing.update(landing_params)
-        format.html { redirect_to landing_url(@landing), notice: "Landing was successfully updated." }
+        format.html { redirect_to admin_path, notice: "Landing was successfully updated." }
         format.json { render :show, status: :ok, location: @landing }
       else
         format.html { render :edit, status: :unprocessable_entity }

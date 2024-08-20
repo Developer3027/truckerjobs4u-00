@@ -2,17 +2,7 @@ class AdminController < ApplicationController
   before_action :authenticate_admin!
   def index
     @admin = current_user.role == "admin"
-    @landings = Landing.all
-  end
-
-  def update
-    @landing = Landing.find(params[:id])
-
-    if @landing.update(landing_params)
-      redirect_to @landing, notice: "Landing was successfully updated."
-    else
-      render :edit
-    end
+    @landings = Landing.order(updated_at: :desc)
   end
 
   private

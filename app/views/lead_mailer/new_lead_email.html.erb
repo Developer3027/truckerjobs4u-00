@@ -1,12 +1,101 @@
-<main>
-  <h1>Lead Generated</h1>
-  <h3>A Trucker is in need of your assistance</h3>
-  <p><%= @landing.first_name %> wishes to be contacted. Here is the information they provided.</p>
-  <ul>
-    <li>Name: <%= @landing.first_name %> <%= @landing.last_name %></li>
-    <li>Email: <%= @landing.email %></li>
-    <li>Phone: <%= @landing.phone %></li>
-    <li>Location: <%= @landing.location %></li>
-  </ul>
-  <p><em>They are waiting on your call.</em></p>
-</main>
+<!DOCTYPE html PUBLIC "-//W#C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0" />
+    <title>TRUCKERJOBS4U Lead Generated</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        background-color: #cccccc;
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 0;
+      }
+      img {
+        border: 0;
+      }
+
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        backgound-color: #cccccc;
+        padding-bottom: 40px;
+      }
+
+      .main {
+        background-color: #ffffff;
+        margin: 0 auto;
+        max-width: 600px;
+        border-spacing: 0;
+        font-family: sans-serif;
+        color: #4a4a4a;
+      }
+
+      @media screen and (max-width: 600px) {
+
+      }
+    </style>
+  </head>
+  <body>
+    <center class="wrapper">
+      <table class="main" width="100%" style="margin-top: 64px;">
+        <!--Logo-->
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td style="text-align: center; padding: 10px; background-color: #000000;">
+                  <a href="">
+                    <%= image_tag("logo1.png") %>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!--Main Section-->
+        <tr>
+          <td>
+            <table width="100%">
+              <tr>
+                <td style="text-align: center;">
+                  <h2>Lead Generated</h2>
+                  <h4>Driver needs some assistance</h4>
+                  <p><%= @landing.first_name %> has visited the landing page and wishes to be contacted.</p>
+                  <p>Here is the information they provided.</p>
+                  <ul style="text-align: left; margin-left: 32px;">
+                    <li>Name: <%= @landing.first_name %> <%= @landing.last_name %></li>
+                    <li>Email: <%= @landing.email %></li>
+                    <li>Phone: <%= @landing.phone %></li>
+                    <li>Location: <%= @landing.location %></li>
+                  </ul>
+                  <p><em>They are waiting on your call.</em></p>
+                  <p><small>This email was automatically generated.</small></p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!--cta to landing admin-->
+        <tr>
+          <td>
+            <table style="width: 100%;">
+              <tr>
+                <td>
+                  <p style="background-color: #eab308; padding: 8px 5px; border-radius: 5px; text-align: center; margin: 8px;">
+                    <%= link_to "Sign in - admin", admin_url, target: "_blank" %>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+  <html>

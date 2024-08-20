@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :landings
   devise_for :users
 
+  # get the admin root
+  get "admin", to: "admin#index", as: :admin
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

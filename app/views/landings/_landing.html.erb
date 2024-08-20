@@ -1,32 +1,28 @@
 <div id="<%= dom_id landing %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">First name:</strong>
-    <%= landing.first_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Last name:</strong>
-    <%= landing.last_name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
-    <%= landing.email %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Phone:</strong>
-    <%= landing.phone %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Location:</strong>
-    <%= landing.location %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Content:</strong>
-    <%= landing.content %>
-  </p>
-
+  <div class="flex">
+    <p class="border border-gray-400 w-24 pl-1">
+      <%= landing.first_name %>
+    </p>
+    <p class="border border-gray-400 w-24 pl-1">
+      <%= landing.last_name %>
+    </p>
+    <p class="border border-gray-400 w-56 pl-1">
+      <%= landing.email %>
+    </p>
+    <p class="border border-gray-400 w-40 pl-1">
+      <%= landing.phone %>
+    </p>
+    <p class="border border-gray-400 w-56 pl-1">
+      <%= landing.location %>
+    </p>
+    <p class="border border-gray-400 w-24 pl-1">
+      <%= landing.created_at.to_date.strftime("%d/%m/%y") %>
+    </p>
+  </div>
+  <div class="w-full">
+    <%= form_for(resource_name(landing), url: edit_landing_path(landing), class: "flex w-full") do |f| %>
+      <%= f.text_field :content, class: "w-3/4" %>
+      <%= f.submit "Update", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer" %>
+    <% end %>
+  </div>
 </div>

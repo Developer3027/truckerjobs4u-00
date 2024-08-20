@@ -36,16 +36,17 @@
               <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
             </div>
             <%= f.email_field :email, id: "email_news", placeholder: "Enter your email", autocomplete: "off", class: "block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
-            <!--<input class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter your email" type="email" id="email_news" autocomplete="off" required="">-->
           </div>
           <div>
             <%= f.submit "Subscribe", class: "py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
-            <!--<button type="submit" class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Subscribe</button>-->
           </div>
         </div>
-        <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 dark:text-gray-300">
-          <%= f.check_box :pp_check, checked: true %> I agree with the 
+        <div data-controller="ppalert" class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 dark:text-gray-300">
+          <span data-action="click->ppalert#toggle"><%= f.check_box :pp_check, checked: true %>&nbsp; I agree with the </span>
           <%= link_to "Privacy Policy", privacy_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+          <div data-ppalert-target="ppalert" class="hidden text-red-500  font-semibold py-2">
+            <span>You must agree to the Privacy Policy</span>
+          </div>
         </div>
         <div class="text-xs text-orange-300 text-left pt-1">* Must agree to sign up *</div>
         <!--</form>-->
@@ -170,47 +171,37 @@
             </h2>
             <small class="text-gray-800 dark:text-white">Are you ready to jump in the driver's seat of your career? We would love to hear from you. Let's get to work on your new career today!</small>
             <%= form_for(resource_name(:landing), url: landings_path, class: "max-w-sm mx-auto") do |f| %>
-              <!--<form class="max-w-sm mx-auto">-->
               <div class="flex flex-col sm:flex-row w-full">
                 <div class="mb-5 text-start mr-1">
                   <%= f.label :first_name, "First Name", for: "first_name", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                  <!--<label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>-->
                   <%= f.text_field :first_name, id: "first_name", placeholder: "John", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                  <!--<input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" autocomplete="off" required />-->
                 </div>
                 <div class="mb-5 text-start ml-1">
                   <%= f.label :last_name, "Last Name", for: "last_name", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                  <!--<label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>-->
                   <%= f.text_field :last_name, id: "last_name", placeholder: "Smith", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                  <!--<input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Smith" autocomplete="off" required />-->
                 </div>
               </div>
               <div class="mb-5 text-start">
                 <%= f.label :email, "Email", for: "email", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                <!--<label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>-->
                 <%= f.email_field :email, id: "email", placeholder: "name@example.com", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                <!--<input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@example.com" autocomplete="off" required />-->
               </div>
               <div class="mb-5 text-start">
                 <%= f.label :phone, "Phone", for: "phone", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                <!--<label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Phone</label>-->
                 <%= f.text_field :phone, id: "phone", placeholder: "555 888 1234", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                <!--<input type="phone" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="(555) 555-1234" autocomplete="off" required />-->
               </div>
               <div class="mb-5 text-start">
                 <%= f.label :location, "Location", for: "location", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                <!--<label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Location</label>-->
                 <%= f.text_field :location, id: "location", placeholder: "Chicago, IL", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
-                <!--<input type="text" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Chicago, IL" autocomplete="off" required />-->
               </div>
-              <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 dark:text-gray-300">
-                <%= f.check_box :pp_check, checked: true %> I agree with the 
+              <div data-controller="ppalert" class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 dark:text-gray-300">
+                <span data-action="click->ppalert#toggle"><%= f.check_box :pp_check, checked: true  %>&nbsp; I agree with the </span>
                 <%= link_to "Privacy Policy", privacy_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>.
+                <div data-ppalert-target="ppalert" class="hidden text-red-500  font-semibold py-2">
+                  <span>You must agree to the Privacy Policy</span>
+                </div>
               </div>
-              <div class="text-xs text-orange-300 text-left pt-1">* Must agree to send the information *</div>
+              <div class="text-xs text-orange-300 text-left pt-2">* Must agree to send the information *</div>
               <%= f.submit "Send", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer" %>
-              <!--<button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>-->
-              <!--</form>-->
             <% end %>
           </div>
         </div>

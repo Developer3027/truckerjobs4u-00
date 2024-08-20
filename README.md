@@ -1,6 +1,34 @@
 # TRUCKERJOBS4U
 
+This is a working landing page concept for TRUCKERJOBS4U. Built in Rails 7 with Ruby 3. I am using postgresql for database, tailwindcss for style, and devise for auth. I used elements from flowbite to get the design together quickly as there was no initial design concept. The page needs to accomplish a few things. 
+
+* One it needs to gather the bare minimum information from a driver who is job hunting, 
+* Two it needs to collect email address of drivers job hunting. 
+* Third it needs to send notifications to the admin and driver. The admin needs to get the info from the contact form. The driver needs a thank you, notice of the new account set up, link to the app. Notified through email. 
+* Fourth, there needs to be a admin section that shows the gathered information with functionality to search, sort by date created, verify icon that emails were sent, delete option, and comment field for adding notes. 
+
+This page is one way to get to the app and is used to gather information.
+
+Here is the **Hero section** of the landing page. The header is minimal and stuck to the top. Logo links to it's self. CTA links to contact form at end of page.
+
 ![Screenshot of Hero on landing page](/app/assets/images/hero.png)
+
+Under the hero section is the **newsletter sign up**. This collects the email and a response email is sent. No account created. The Privacy Policy must be checked. Still working on sending notification of on checked. Default is true, refresh of page set to true.
+
+![Screenshot of the Newsletter section on landing page](/app/assets/images/newsletter.png)
+
+**About section** gives a brief introduction to TRUCKERJOBS4U.
+
+![Screenshot of the About section on landing page](/app/assets/images/about.png)
+
+**Meet the team** section includes cards to introduce who work for the driver.
+
+![Screenshot of the team section on the landing page](/app/assets/images/team.png)
+
+**Contact form** at the bottom of the page. This gathers the drivers name, email, phone, and location. Also includes the Privacy Policy check. On submit needs to send emails and create initial account.
+
+![Screenshot of the contact form on the landing page](/app/assets/images/contact.png)
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

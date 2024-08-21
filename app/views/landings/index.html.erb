@@ -8,16 +8,17 @@
       <% if alert.present? %>
         <p class="py-2 px-3 bg-black mb-5 text-rose-400 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
       <% end %>
-      <span class="mb-1 text-2xl font-semibold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-5xl dark:text-white">
+      <span class="mb-1 text-2xl font-semibold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
         It's time to find your perfect
       </span>
       <div class="flex flex-col justify-center items-center w-11/12">
-        <span class="text-4xl saira-stencil-one-regular font-bold tracking-tight leading-none md:text-5xl lg:text-6xl dark:text-yellow-400">
+        <%= image_tag("logo1.png") %>
+        <%# <span class="text-4xl saira-stencil-one-regular font-bold tracking-tight leading-none md:text-5xl lg:text-6xl dark:text-yellow-400">
           TRUCK DRIVING CAREER
-        </span>
+        </span> %>
       </div>
       <%#= current_user.nil? ? 'No user signed in' : current_user.email %>
-      <%= link_to "START YOUR JOURNEY", "#contact", class: "py-4 px-12 mt-6 rounded bg-yellow-500 text-slate-900 hover:bg-yellow-400 cursor-pointer" %>
+      <%= link_to "START YOUR JOURNEY", "#contact", class: "py-4 px-12 mt-6 rounded bg-yellow-300 text-slate-900 hover:bg-yellow-400 cursor-pointer" %>
     </div>
   </div>
 </section>
@@ -25,7 +26,7 @@
 <section class="w-full bg-white dark:bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 z-10 relative">
     <div class="mx-auto max-w-screen-md sm:text-center">
-      <h2 class="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl font-bak text-yellow-500">Stay up to date with our newsletter</h2>
+      <h2 class="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl font-bak text-yellow-300">Stay up to date with our newsletter</h2>
       <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Transportation is changing. Sign up to get the latest news on developments!</p>
       <%= form_for(resource_name(:newsletter_email), url: newsletter_emails_path, class: "max-w-sm mx-auto") do |f| %>
         <!--<form action="#">-->
@@ -60,8 +61,7 @@
     <div class="lg:w-5/6 text-center">
       <div class="flex justify-center text-2xl sm:text-3xl my-6 text-gray-500 dark:text-gray-400">
         <span class="font-sans">About &nbsp;</span>
-        <span class="saira-stencil-one-regular">TRUCKER</span>
-        <span class="text-yellow-400 saira-stencil-one-regular">JOBS4U.com</span>
+        <%= image_tag("logo1.png") %>
       </div>
       <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
         Founded in 2024 by a group of experienced recruiting specialists, TruckerJobs4u.com emerged from a collective vision to revolutionize the truck driver recruitment industry. Our founders, having spent years navigating the complexities of driver placement, recognized a glaring need for a more personalized and honest approach to career planning for truck drivers.

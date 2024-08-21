@@ -40,7 +40,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Send email via MailerSend.
-  onfig.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:         'smtp.mailersend.net',
     port:            587,

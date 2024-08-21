@@ -1,4 +1,5 @@
 class NewsletterEmailsController < ApplicationController
+  before_action :authenticate_user!, only: %i[ show edit update destroy ]
   before_action :set_newsletter_email, only: %i[ show edit update destroy ]
 
   # GET /newsletter_emails or /newsletter_emails.json
@@ -24,11 +25,13 @@ class NewsletterEmailsController < ApplicationController
     @newsletter_email = NewsletterEmail.new(newsletter_email_params)
 
     if newsletter_email_params[:pp_check] == "0" || newsletter_email_params[:pp_check] == false
-      @error_message = "Please check the privacy policy"
-      render :new, locals: { error_message: @error_message }
+      redirect_to root_path, alert: "Please check the privacy policy"
     else
       respond_to do |format|
         if @newsletter_email.save
+          # Send an thank you email to the driver
+          NewsletterMailer.new_newsletter_email(@newsletter_email).deliver_now
+
           format.html { redirect_to root_path, notice: "Thank you for signing up!" }
           format.json { render :show, status: :created, location: @newsletter_email }
         else

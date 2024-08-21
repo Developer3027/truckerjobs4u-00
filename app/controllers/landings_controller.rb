@@ -1,4 +1,5 @@
 class LandingsController < ApplicationController
+  before_action :authenticate_user!, only: %i[ show new edit update destroy ]
   before_action :set_landing, only: %i[ show edit update destroy ]
 
   # GET /landings or /landings.json
@@ -25,18 +26,19 @@ class LandingsController < ApplicationController
     @landing = Landing.new(landing_params)
 
     if landing_params[:pp_check] == "0" || landing_params[:pp_check] == false
-      render :new
+      redirect_to root_path, alert: "Please check the privacy policy"
+      # render :new
     else
       respond_to do |format|
         if @landing.save
           # Create a new user using the email field from the landing form
-          User.create(email: params[:landing][:email], password: params[:landing][:last_name])
+          # User.create(email: params[:landing][:email], password: params[:landing][:last_name])
 
           # Send an email to the admin
           LeadMailer.new_lead_email(@landing).deliver_now
 
-          # Send an email to the driver
-          # DriverMailer.new_lead_email(@landing).deliver_now
+          # Send an thank you email to the driver
+          DriverMailer.new_driver_email(@landing).deliver_now
 
           format.html { redirect_to root_path, notice: "Thank you! We will be in touch soon!" }
           format.json { render :show, status: :created, location: @landing }

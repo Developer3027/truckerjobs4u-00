@@ -82,6 +82,9 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
   # config.active_job.queue_name_prefix = "truckerjobs4u_production"
 
+  # set default url for action mailer in production
+  config.action_mailer.default_url_options = { host: "https://truckerjobs4u.onrender.com" }
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

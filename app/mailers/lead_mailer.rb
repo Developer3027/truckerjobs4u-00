@@ -8,6 +8,7 @@ class LeadMailer < ApplicationMailer
   def new_lead_email(landing)
     @landing = landing
     admins = User.where(role: 1)
+    puts "admin emails: #{admins.pluck(:email)}"
     mail to: admins.pluck(:email), subject: 'New Lead Created'
   end
 end

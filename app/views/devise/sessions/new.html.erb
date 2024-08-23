@@ -1,24 +1,23 @@
-<div class="mt-20">
-  <h2>Log in</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+<div class="flex justify-center items-center w-full bg-slate-900 min-h-svh">
+  <div class="max-w-sm">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="mb-5">
+        <%= f.label :email, "Email: ", class: "block mb-2 text-sm font-medium text-white" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",  class: "text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500", placeholder: "name@mail.com" %>
       </div>
+      <div class="mb-5">
+        <%= f.label :password, "Password", class: "block mb-2 text-sm font-medium text-white" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white focus:ring-blue-500 focus:border-blue-500" %>
+      </div>
+      <div class="flex items-start mb-5">
+        <% if devise_mapping.rememberable? %>
+          <div  class="flex items-center h-5">
+            <%= f.check_box :remember_me, class: "w-4 h-4 rounded bg-gray-700 border-gray-600 focus:ring-blue-600 ring-offset-gray-800 focus:ring-offset-gray-800" %>
+            <%= f.label :remember_me, class: "ms-2 text-sm font-medium text-gray-300" %>
+          </div>
+        <% end %>
+      </div>
+      <%= f.submit "Log in", class: " font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" %>
     <% end %>
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-    rails generate devise:views
-  <% end %>
-  <%= render "devise/shared/links" %>
+  </div>
 </div>

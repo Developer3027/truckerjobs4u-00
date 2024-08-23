@@ -1,5 +1,5 @@
 class NewsletterEmailsController < ApplicationController
-  before_action :authenticate_user!, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: %i[ show new edit update destroy ]
   before_action :set_newsletter_email, only: %i[ show edit update destroy ]
 
   # GET /newsletter_emails or /newsletter_emails.json

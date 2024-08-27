@@ -1,4 +1,5 @@
 class LandingsController < ApplicationController
+  # include Pagy::Backend
   before_action :authenticate_user!, only: %i[ show new edit update destroy ]
   before_action :set_landing, only: %i[ show edit update destroy ]
 
@@ -68,7 +69,7 @@ class LandingsController < ApplicationController
     @landing.destroy!
 
     respond_to do |format|
-      format.html { redirect_to landings_url, notice: "Landing was successfully destroyed." }
+      format.html { redirect_to admin_path, notice: "Landing was successfully destroyed." }
       format.json { head :no_content }
     end
   end

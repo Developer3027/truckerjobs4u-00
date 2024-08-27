@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # get the admin root
   get "admin", to: "admin#index", as: :admin
+  delete '/admin/destroy_landing/:id', to: 'admin#destroy_landing', as: 'admin_destroy_landing'
+  delete '/admin/destroy_newsletter/:id', to: 'admin#destroy_newsletter', as: 'admin_destroy_newsletter'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -3,7 +3,8 @@ class AdminController < ApplicationController
   before_action :authenticate_admin!
   def index
     @admin = current_user.role == "admin"
-    @pagy, @landings = pagy(Landing.order(updated_at: :desc), limit: 7) # @landings = Landing.order(updated_at: :desc)
+    @q = Landing.ransack(params[:q])
+    @pagy, @landings = pagy(@q.result(distinct: true), limit: 7) # @landings = Landing.order(updated_at: :desc)
     @newsletters = NewsletterEmail.order(created_at: :desc)
   end
 

@@ -16,6 +16,10 @@ This page is one way to get to the app and is used to gather information.
 
 Devise is used but users can not register. Use console to create admin with role of 1 or "admin" so emails can be sent. _WIll error is no admin present._
 
+**Admin**
+
+The admin dashboard has two parts. Small column for a list of newsletter emails and a large column for the leads - (landings), information. The leads have pagination through the pagy gem. 
+
 Here is the **Hero section** of the landing page. The header is minimal and stuck to the top. Logo links to it's self. CTA links to contact form at end of page.
 
 ![Screenshot of Hero on landing page](/app/assets/images/hero.png)
@@ -83,5 +87,7 @@ Things you may want to cover:
   **update**
 
   * See update in services. Switched to DigitalOcean because Render does not support SMTP through port 587. Will ask for SECRET_KEY_BASE env variable for production run. I used the master key for it. Worked fine.
+
+
 
 See the associated project for updates.

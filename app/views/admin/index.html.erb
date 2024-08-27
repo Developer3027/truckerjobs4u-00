@@ -46,6 +46,10 @@
             <li>A thank you email was sent to the trucker.</li>
           </ul>
         </p>
+        <%= search_form_for @q, url: admin_path do |f| %>
+          <%= f.search_field :first_name_or_last_name_or_email_or_phone_or_location_cont %>
+          <%= f.submit %>
+        <% end %>
         <div class="my-2">
           <%== pagy_nav(@pagy) %>
         </div>
@@ -53,11 +57,11 @@
           <table>
             <thead>
               <tr>
-                <th class="px-2 text-start">First Name</th>
-                <th class="px-2 text-start">Last Name</th>
+                <th class="px-2 text-start"><%= sort_link(@q, :first_name, "First Name", default_order: :desc)%></th>
+                <th class="px-2 text-start"><%= sort_link(@q, :last_name, "Last Name", default_order: :desc)%></th>
                 <th class="px-2 text-start">Email</th>
                 <th class="px-2 text-start">Phone</th>
-                <th class="px-2 text-start">Location</th>
+                <th class="px-2 text-start"><%= sort_link(@q, :location, "Location", default_order: :desc)%></th>
                 <th class="px-2 text-start">Notes</th>
               </tr>
             </thead>

@@ -1,50 +1,46 @@
 <!--hero-->
-<section class="mt-20 w-full min-h-svh bg-white dark:bg-gray-900 bg-no-repeat bg-center bg-cover bg-[url('w3070.webp')]">
+<section class="mt-20 w-full min-h-svh bg-gray-900 bg-no-repeat bg-center bg-cover bg-[url('w3070.webp')]">
   <div class="flex justify-center items-center py-8 px-4 w-full min-h-svh lg:py-16 z-10 bg-gradient-to-br from-orange-400/40 via-teal-950/20 to-gray-500/30 relative">
-    <div class="flex flex-col justify-center items-center lg:w-5/6 text-center md:mt-44 lg:mt-60">
+    <div class="flex flex-col justify-center items-center lg:w-5/6 text-center md:mt-44 lg:mt-60 bg-slate-600/50 p-2 rounded">
       <% if notice.present? %>
         <p class="py-2 px-3 bg-black mb-5 text-teal-400 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
       <% end %>
       <% if alert.present? %>
         <p class="py-2 px-3 bg-black mb-5 text-rose-400 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
       <% end %>
-      <span class="mb-1 text-2xl font-semibold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
-        It's time to find your perfect
+      <span class="mb-1 text-2xl font-semibold tracking-tight leading-none md:text-4xl lg:text-4xl text-white">
+        Steer your career in the right direction.
       </span>
       <div class="flex flex-col justify-center items-center w-11/12">
         <%= image_tag("logo1.png") %>
-        <%# <span class="text-4xl saira-stencil-one-regular font-bold tracking-tight leading-none md:text-5xl lg:text-6xl dark:text-yellow-400">
-          TRUCK DRIVING CAREER
-        </span> %>
       </div>
-      <%#= current_user.nil? ? 'No user signed in' : current_user.email %>
       <%= link_to "START YOUR JOURNEY", "#contact", class: "py-4 px-12 mt-6 rounded bg-yellow-300 text-slate-900 hover:bg-yellow-400 cursor-pointer" %>
     </div>
   </div>
 </section>
 <!--newsletter-->
-<section class="w-full bg-white dark:bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+<section class="w-full bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 z-10 relative">
     <div class="mx-auto max-w-screen-md sm:text-center">
       <h2 class="mb-4 text-3xl tracking-tight font-extrabold sm:text-4xl font-bak text-yellow-300">Stay up to date with our newsletter</h2>
-      <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">Transportation is changing. Sign up to get the latest news on developments!</p>
+      <p class="mx-auto mb-8 max-w-2xl font-light md:mb-12 sm:text-xl text-gray-400">Transportation is changing. Sign up to get the latest news on developments!</p>
       <%= form_for(resource_name(:newsletter_email), url: newsletter_emails_path, class: "max-w-sm mx-auto") do |f| %>
         <!--<form action="#">-->
         <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
           <div class="relative w-full">
-            <label for="email_news" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
+            <label for="email_news" class="hidden mb-2 text-sm font-medium text-gray-300">Email address</label>
             <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+              <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
             </div>
-            <%= f.email_field :email, id: "email_news", placeholder: "Enter your email", autocomplete: "off", class: "block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+            <%= f.email_field :email, id: "email_news", placeholder: "Enter your email", autocomplete: "off", class: "block p-3 pl-10 w-full text-sm rounded-lg border sm:rounded-none sm:rounded-l-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500" %>
           </div>
           <div>
-            <%= f.submit "Subscribe", class: "py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+            <%= f.submit "Subscribe", class: "text-white py-3 px-5 w-full text-sm font-medium text-center rounded-lg border cursor-pointer sm:rounded-none sm:rounded-r-lg bg-primary-600 hover:bg-primary-700 focus:ring-primary-800" %>
           </div>
         </div>
-        <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 dark:text-gray-300">
+        <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-300">
           <%= f.check_box :pp_check, checked: true %>&nbsp; I agree with the </span>
-        <%= link_to "Privacy Policy", privacy_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+        <%= link_to "Privacy Policy", privacy_path, class: "font-medium text-blue-500 hover:underline" %>
       </div>
       <div class="text-xs text-orange-300 text-left pt-1">* Must agree to privacy policy to recieve Newsletters *</div>
       <!--</form>-->
@@ -53,99 +49,99 @@
 </div>
 </section>
 <!--about --->
-<section class="w-full bg-white dark:bg-black">
+<section class="w-full bg-black">
   <div class="flex flex-col justify-center items-center py-8 px-4 w-full">
     <div class="lg:w-5/6 text-center">
-      <div class="flex justify-center text-2xl sm:text-3xl my-6 text-gray-500 dark:text-gray-400">
+      <div class="flex justify-center text-2xl sm:text-3xl my-6 text-gray-400">
         <span class="font-sans">About &nbsp;</span>
         <%= image_tag("logo1.png", class: "max-w-64") %>
       </div>
-      <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
+      <p class="font-normal sm:text-xl text-gray-400 my-6">
         Founded in 2024 by a group of experienced recruiting specialists, TruckerJobs4u.com emerged from a collective vision to revolutionize the truck driver recruitment industry. Our founders, having spent years navigating the complexities of driver placement, recognized a glaring need for a more personalized and honest approach to career planning for truck drivers.
       </p>
-      <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
+      <p class="font-normal sm:text-xl text-gray-400 my-6">
         At TruckerJobs4u.com, we believe that every driver’s journey is unique. Our mission is to provide tailored career plans that align with each driver’s specific skills, goals, and lifestyle preferences. Unlike traditional recruitment agencies that often prioritize filling positions over the individual needs of drivers, we focus on creating meaningful matches between drivers and carriers.
       </p>
-      <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
+      <p class="font-normal sm:text-xl text-gray-400 my-6">
         We work closely with a network of reputable carriers that offer diverse opportunities, from local routes to long-haul trips. Our commitment is to ensure that every driver we place is positioned for long-term success and satisfaction. We pride ourselves on our integrity and professionalism, striving to build lasting relationships with both our drivers and carrier partners
       </p>
-      <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
+      <p class="font-normal sm:text-xl text-gray-400 my-6">
         At TruckerJobs4u.com, we go beyond mere job placement. We provide comprehensive support throughout the entire career journey of our drivers, from initial consultation to career advancement. Our goal is to redefine what it means to work in the trucking industry by offering drivers true career paths that not only meet their immediate needs but also pave the way for future growth and fulfillment
       </p>
-      <p class="font-normal sm:text-xl text-gray-500 dark:text-gray-400 my-6">
+      <p class="font-normal sm:text-xl text-gray-400 my-6">
         Join us at TruckerJobs4u.com, where your career journey is our top priority.
       </p>
     </div>
   </div>
 </section>
 <!--meet team --->
-<section class="w-full bg-white dark:bg-black py-12">
+<section class="w-full bg-black py-12">
   <div class="text-center">
-    <h3 class="text-2xl font-medium text-gray-900 dark:text-white">
+    <h3 class="text-2xl font-medium text-white">
       Meet your Team
     </h3>
   </div>
   <div class="flex flex-wrap justify-evenly items-center">
     <!--one-->
-    <div class="w-full my-4 mx-2 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full my-4 mx-2 max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
       <div class="flex flex-col items-center py-10">
         <%= image_tag("21.jpg", class: "w-24 h-24 my-3 rounded-full shadow-lg", alt: "Bobby Nickson") %>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bobby Nickson</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Answer Guy</span>
+        <h5 class="mb-1 text-xl font-medium text-white">Bobby Nickson</h5>
+        <span class="text-sm text-gray-400">Answer Guy</span>
         <div class="flex mt-4 md:mt-6">
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-400">
             15 years recruiting | Friend to all animals
           </p>
         </div>
       </div>
     </div>
     <!--two-->
-    <div class="w-full my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full my-4 max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
       <div class="flex flex-col items-center py-10">
         <%= image_tag("41.jpg", class: "w-24 h-24 my-3 rounded-full shadow-lg", alt: "Cate Ronald") %>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Cate Ronald</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Shining Star</span>
+        <h5 class="mb-1 text-xl font-medium text-white">Cate Ronald</h5>
+        <span class="text-sm text-gray-400">Shining Star</span>
         <div class="flex mt-4 md:mt-6">
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-400">
             Head Chef | Loves fluffy cats
           </p>
         </div>
       </div>
     </div>
     <!--three-->
-    <div class="w-full my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full my-4 max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
       <div class="flex flex-col items-center py-10">
         <%= image_tag("3.jpg", class: "w-24 h-24 my-3 rounded-full shadow-lg", alt: "Cate Ronald") %>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Jack Valentine</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Runs Marathons</span>
+        <h5 class="mb-1 text-xl font-medium text-white">Jack Valentine</h5>
+        <span class="text-sm text-gray-400">Runs Marathons</span>
         <div class="flex mt-4 md:mt-6">
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-400">
             Head Hunter | Loves when they are scared
           </p>
         </div>
       </div>
     </div>
     <!--four-->
-    <div class="w-full my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full my-4 max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
       <div class="flex flex-col items-center py-10">
         <%= image_tag("72.jpg", class: "w-24 h-24 my-3 rounded-full shadow-lg", alt: "Cate Ronald") %>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Jason Stathom</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Plugs things in</span>
+        <h5 class="mb-1 text-xl font-medium text-white">Jason Stathom</h5>
+        <span class="text-sm text-gray-400">Plugs things in</span>
         <div class="flex mt-4 md:mt-6">
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-400">
             Question Guy | Loves Sparklers
           </p>
         </div>
       </div>
     </div>
     <!--five-->
-    <div class="w-full my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full my-4 max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
       <div class="flex flex-col items-center py-10">
         <%= image_tag("83.jpg", class: "w-24 h-24 my-3 rounded-full shadow-lg", alt: "Cate Ronald") %>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Tim Wheat</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Smarty Pants</span>
+        <h5 class="mb-1 text-xl font-medium text-white">Tim Wheat</h5>
+        <span class="text-sm text-gray-400">Smarty Pants</span>
         <div class="flex mt-4 md:mt-6">
-          <p class="text-sm text-gray-500 dark:text-gray-400">
+          <p class="text-sm text-gray-400">
             Friendly One | Scary One
           </p>
         </div>
@@ -154,48 +150,48 @@
   </div>
 </section>
 <!--contact-->
-<section id="contact" class="w-full pt-10 bg-white dark:bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+<section id="contact" class="w-full pt-10 bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
   <div class="flex flex-col justify-center items-center">
-    <div class="w-full lg:max-w-4xl my-10 p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full lg:max-w-4xl my-10 p-4 text-center border rounded-lg shadow sm:p-8 bg-gray-800 border-gray-700">
       <div class="grid sm:grid-cols-2">
         <div class="block mx-auto">
           <%= image_tag("StockCake-Sunset Truck Interior_1722132169.jpg", class: "rounded-lg w-72 sm:w-full", alt: "big rig interior of driver seat") %>
         </div>
         <div class="flex flex-col justify-center items-center">
-          <div class="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg dark:bg-gray-800">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+          <div class="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 rounded-lg bg-gray-800">
+            <h2 class="text-2xl font-bold text-white">
               Contact Us.
             </h2>
-            <small class="text-gray-800 dark:text-white">Are you ready to jump in the driver's seat of your career? We would love to hear from you. Let's get to work on your new career today!</small>
+            <small class="text-white">Are you ready to jump in the driver's seat of your career? We would love to hear from you. Let's get to work on your new career today!</small>
             <%= form_for(resource_name(:landing), url: landings_path, class: "max-w-sm mx-auto") do |f| %>
               <div class="flex flex-col sm:flex-row w-full">
                 <div class="mb-5 text-start mr-1">
-                  <%= f.label :first_name, "First Name", for: "first_name", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                  <%= f.text_field :first_name, id: "first_name", placeholder: "John", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+                  <%= f.label :first_name, "First Name", for: "first_name", class: "block mb-2 text-sm font-medium text-white" %>
+                  <%= f.text_field :first_name, id: "first_name", placeholder: "John", autocomplete: "off", class: " border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" %>
                 </div>
                 <div class="mb-5 text-start ml-1">
-                  <%= f.label :last_name, "Last Name", for: "last_name", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                  <%= f.text_field :last_name, id: "last_name", placeholder: "Smith", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+                  <%= f.label :last_name, "Last Name", for: "last_name", class: "block mb-2 text-sm font-medium text-white" %>
+                  <%= f.text_field :last_name, id: "last_name", placeholder: "Smith", autocomplete: "off", class: " border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" %>
                 </div>
               </div>
               <div class="mb-5 text-start">
-                <%= f.label :email, "Email", for: "email", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                <%= f.email_field :email, id: "email", placeholder: "name@example.com", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+                <%= f.label :email, "Email", for: "email", class: "block mb-2 text-sm font-medium text-white" %>
+                <%= f.email_field :email, id: "email", placeholder: "name@example.com", autocomplete: "off", class: " border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" %>
               </div>
               <div class="mb-5 text-start">
-                <%= f.label :phone, "Phone", for: "phone", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                <%= f.text_field :phone, id: "phone", placeholder: "555 888 1234", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+                <%= f.label :phone, "Phone", for: "phone", class: "block mb-2 text-sm font-medium text-white" %>
+                <%= f.text_field :phone, id: "phone", placeholder: "555 888 1234", autocomplete: "off", class: " border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" %>
               </div>
               <div class="mb-5 text-start">
-                <%= f.label :location, "Location", for: "location", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
-                <%= f.text_field :location, id: "location", placeholder: "Chicago, IL", autocomplete: "off", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+                <%= f.label :location, "Location", for: "location", class: "block mb-2 text-sm font-medium text-white" %>
+                <%= f.text_field :location, id: "location", placeholder: "Chicago, IL", autocomplete: "off", class: " border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" %>
               </div>
-              <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-500 dark:text-gray-300">
+              <div class="mx-auto max-w-screen-sm text-xs text-left text-gray-300">
                 <%= f.check_box :pp_check, checked: true  %>&nbsp; I agree with the
-                <%= link_to "Privacy Policy", privacy_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>.
+                <%= link_to "Privacy Policy", privacy_path, class: "font-medium text-blue-600 text-blue-500 hover:underline" %>.
               </div>
               <div class="text-xs text-orange-300 text-left pt-2">* Must agree to privacy policy for services *</div>
-              <%= f.submit "Send", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer" %>
+              <%= f.submit "Send", class: "text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto mt-4 px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800 cursor-pointer" %>
             <% end %>
           </div>
         </div>

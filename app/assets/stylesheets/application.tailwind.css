@@ -5,6 +5,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.pagy {
+  @apply flex space-x-1 font-semibold text-sm text-gray-500;
+  a:not(.gap) {
+    @apply block rounded-lg px-3 py-1 bg-gray-200;
+    &:hover {
+      @apply bg-gray-300;
+    }
+    &:not([href]) { /* disabled links */
+      @apply text-gray-300 bg-gray-100 cursor-default;
+    }
+    &.current {
+      @apply text-white bg-gray-400;
+    }
+  }
+  label {
+    @apply inline-block whitespace-nowrap bg-gray-200 rounded-lg px-3 py-0.5;
+    input {
+      @apply bg-gray-100 border-none rounded-md;
+    }
+  }
+}
+
 /*
 
 @layer components {

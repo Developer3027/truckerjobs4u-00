@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Pagy::Frontend
   # Returns the symbol `:landing`, which represents the name of the resource being used in the application.
   #
   # @return [Symbol] `:landing`
@@ -8,7 +9,7 @@ module ApplicationHelper
 
   # Returns the class of the resource being used in the application.
   #
-  # @return [Class] The class of the resource.
+  # @return [Class] The class of the resource.@pagy, @landings = pagy(Landing.order(updated_at: :desc), items: 10)
   def resource_class(resource = :landing)
     resource.to_s.classify.constantize
   end

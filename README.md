@@ -22,23 +22,27 @@ The admin dashboard has two parts. Small column for a list of newsletter emails 
 
 Here is the **Hero section** of the landing page. The header is minimal and stuck to the top. Logo links to it's self. CTA links to contact form at end of page.
 
-![Screenshot of Hero on landing page](/app/assets/images/hero.png)
+![Screenshot of Hero on landing page](https://blog3169.s3.us-east-2.amazonaws.com/hero.png)
 
 Under the hero section is the **newsletter sign up**. This collects the email and a response email is sent. No account created. The Privacy Policy must be checked. Still working on sending notification of on checked. Default is true, refresh of page set to true.
 
-![Screenshot of the Newsletter section on landing page](/app/assets/images/newsletter.png)
+![Screenshot of the Newsletter section on landing page](https://blog3169.s3.us-east-2.amazonaws.com/newsletter.png)
 
 **About section** gives a brief introduction to TRUCKERJOBS4U.
 
-![Screenshot of the About section on landing page](/app/assets/images/about.png)
+![Screenshot of the About section on landing page](https://blog3169.s3.us-east-2.amazonaws.com/about.png)
 
 **Meet the team** section includes cards to introduce who work for the driver.
 
-![Screenshot of the team section on the landing page](/app/assets/images/team.png)
+![Screenshot of the team section on the landing page](https://blog3169.s3.us-east-2.amazonaws.com/team.png)
 
 **Contact form** at the bottom of the page. This gathers the drivers name, email, phone, and location. Also includes the Privacy Policy check. On submit needs to send emails and create initial account.
 
-![Screenshot of the contact form on the landing page](/app/assets/images/contact.png)
+![Screenshot of the contact form on the landing page](https://blog3169.s3.us-east-2.amazonaws.com/contact.png)
+
+**Admin Dashboard** The admin shows all the emails from the newsletter and the contact information. Can sort name and location columns. Can search any of the fields in search box. Can update notes for contact record and delete records.
+
+![Screenshot of the admin dashboard](https://blog3169.s3.us-east-2.amazonaws.com/Screenshot+from+2024-08-27+11-22-27.png)
 
 
 This README would normally document whatever steps are necessary to get the

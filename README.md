@@ -1,6 +1,6 @@
 # TRUCKERJOBS4U
 
-This is a working landing page concept for TRUCKERJOBS4U. Built in Rails 7 with Ruby 3. I am using postgresql for database, tailwindcss for style, and devise for auth. I used elements from flowbite to get the design together quickly as there was no initial design concept. The page needs to accomplish a few things. 
+This is a working landing page concept for TRUCKERJOBS4U. Built in Rails 7 with Ruby 3. Using postgresql for database, tailwindcss for style, and devise for auth. I used elements from flowbite to get the design together quickly as there was no initial design concept. The page needs to accomplish a few things. 
 
 * One it needs to gather the bare minimum information from a driver who is job hunting, 
 * Two it needs to collect email address of drivers job hunting. 
@@ -36,7 +36,7 @@ Under the hero section is the **newsletter sign up**. This collects the email an
 
 ![Screenshot of the team section on the landing page](https://blog3169.s3.us-east-2.amazonaws.com/team.png)
 
-**Contact form** at the bottom of the page. This gathers the drivers name, email, phone, and location. Also includes the Privacy Policy check. On submit needs to send emails and create initial account.
+**Contact form** at the bottom of the page. This gathers the drivers name, email, phone, and location. Also includes the Privacy Policy check. On submit needs to send emails and create initial account. The mail controller searches for and gets the admin email as the from to send the email. A user with the role admin must be available and the email must reference mailersend.
 
 ![Screenshot of the contact form on the landing page](https://blog3169.s3.us-east-2.amazonaws.com/contact.png)
 
@@ -48,21 +48,28 @@ Under the hero section is the **newsletter sign up**. This collects the email an
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
 * Ruby version
 
   * 3.1.4
 
 * System dependencies
   * Needed to set up 2 client servers on DigitalOcean. Memory usage is high. Will update.
+  * Mailersend using SMTP relay for dev. Need username and password from setting up relay user, in env. Run (EDITOR="code --wait" bin/rails credentials:edit) in terminal at root of app to set env variables. Use the email used here to create, for creating admin user.
+  * Using pagy gem for pagination in admin.
+  * Using ransack gem for sort and search in admin.
+  * Using meta-tags for seo.
 
 * Configuration
+
+  * Can not register users for landing page. Use console to add one user with role of admin. email: "mailersend@reference", password: "secure-password", role: 1 - (role: "admin")
 
   * Postgresql - pg
   * Tailwindcss
   * Devise
   * Mailersend
+  * Pagy
+  * Ransack
+  * Meta-Tags
 
 * Database creation
   * bin/rails db:create

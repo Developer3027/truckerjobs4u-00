@@ -79,3 +79,5 @@ gem "devise", "~> 4.9"
 gem "pagy", "~> 9.0"
 
 gem "ransack", "~> 4.2"
+
+gem "meta-tags", "~> 2.22"
